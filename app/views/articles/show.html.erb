@@ -1,4 +1,7 @@
-<%= image_tag @article.cover_picture %>
-<%= @article.title %>
-<%= format_date(@article.published_at) %>
+<div class="my-4">
+  <%= image_tag @article.cover_picture %>
+</div>
+<h1 class="text-3xl font-semibold"><%= @article.title %></h1>
+<p><%= format_date(@article.published_at) %></p>
+<hr class="border-gray-500 my-4">
 <%= @article.content %>

@@ -1,0 +1,13 @@
+.trix-content {
+  h2 {
+    @apply text-2xl font-semibold my-2;
+  }
+
+  p {
+    @apply my-2;
+  }
+
+  ol {
+    @apply list-decimal ml-4;
+  }
+}
