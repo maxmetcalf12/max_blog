@@ -1,1 +1,21 @@
-<h1>Articles</h1>
+<div class="flex flex-col w-full my-8">
+  <div class="text-5xl relative">
+    <span class="absolute -ml-16">📝</span>
+    <h1>Articles</h1>
+  </div>
+  <p class="text-lg">
+    List of articles I have written on varying subjects. Could be anything from
+    politics to business ideas to religion.
+  </p>
+</div>
+<div class="flex flex-col w-full my-8">
+  <% @articles.each do |article| %>
+    <%= link_to article do %>
+      <div class="bg-gray-100 p-4 w-full my-2">
+        <h2 class="text-xl"><%= article.title %></h2>
+        <p class="text-sm text-gray-500"><%= article.published_at.strftime("%B %e, %Y") %></p>
+        <%= article.preview %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
