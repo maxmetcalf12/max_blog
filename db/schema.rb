@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_20_213847) do
+ActiveRecord::Schema.define(version: 2020_06_20_225628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,18 @@ ActiveRecord::Schema.define(version: 2020_06_20_213847) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "preview"
+  end
+
+  create_table "product_reviews", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.text "preview"
+    t.datetime "published_at"
+    t.decimal "rating"
+    t.string "path"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["path"], name: "index_product_reviews_on_path"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

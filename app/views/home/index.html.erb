@@ -27,3 +27,18 @@
     <% end %>
   <% end %>
 </div>
+<div class="flex flex-col w-full my-8">
+  <div class="text-2xl relative my-2">
+    <span class="absolute -ml-8">💾</span>
+    <h2>Recent Product Reviews</h2>
+  </div>
+  <% @product_reviews.each do |product_review| %>
+    <%= link_to product_review do %>
+      <div class="bg-gray-100 p-4 w-full my-2">
+        <h2 class="text-xl"><%= product_review.name %></h2>
+        <p class="text-sm text-gray-500"><%= product_review.published_at.strftime("%B %e, %Y") %></p>
+        <%= product_review.preview %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
