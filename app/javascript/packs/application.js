@@ -6,7 +6,9 @@
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
+require("@rails/actiontext")
 require("channels")
+require("trix")
 
 import 'controllers'
 import '../css/application.scss'

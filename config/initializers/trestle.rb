@@ -1,9 +1,36 @@
+# frozen_string_literal: true
+
 Trestle.configure do |config|
   # == Customization Options
   #
   # Set the page title shown in the main header within the admin.
   #
-  config.site_title = "Max Blog"
+  config.site_title = 'Max Blog'
+
+  config.tinymce.default.configure do |c|
+    c.skin = 'trestle'
+    c.selector = 'textarea.tinymce'
+    c.branding = false
+    c.elementpath = false
+    c.menubar = false
+    c.statusbar = false
+    c.plugins = %i[
+      lists
+      link
+      image
+      charmap
+      table
+      code
+      hr
+      paste
+    ]
+    c.toolbar = [
+      'styleselect | bold italic underline strikethrough | subscript superscript hr | alignleft aligncenter alignright alignjustify',
+      'bullist numlist | indent outdent | undo redo | link unlink | image table | code'
+    ]
+    c.link_context_toolbar = true
+    c.convert_urls = false
+  end
 
   # Specify a custom image to be used in place of the site title for mobile and
   # expanded/desktop navigation. These images should be placed within your
