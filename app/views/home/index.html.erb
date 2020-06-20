@@ -1,0 +1,29 @@
+<div class="flex w-full justify-around items-center my-8">
+  <div>
+    <div class="text-4xl relative">
+      <span class="absolute -ml-12">👋🏼</span>
+      <h1>Hey, I'm Max Metcalf.</h1>
+    </div>
+    <h2 class="text-2xl">Welcome to my blog.</h2>
+  </div>
+  <div>
+    <div class="w-56">
+      <%= image_tag "maxmoji.png" %>
+    </div>
+  </div>
+</div>
+<div class="flex flex-col w-full my-8">
+  <div class="text-2xl relative my-2">
+    <span class="absolute -ml-8">📝</span>
+    <h2>Recent Articles</h2>
+  </div>
+  <% @articles.each do |article| %>
+    <%= link_to article do %>
+      <div class="bg-gray-100 p-4 w-full my-2">
+        <h2 class="text-xl"><%= article.title %></h2>
+        <p class="text-sm text-gray-500"><%= article.published_at.strftime("%B %e, %Y") %></p>
+        <%= article.preview %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

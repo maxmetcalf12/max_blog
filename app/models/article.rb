@@ -8,4 +8,6 @@ class Article < ApplicationRecord
 
   scope :published, -> { where.not(published_at: nil) }
   scope :drafts, -> { where(published_at: nil) }
+
+  def published_date; end
 end

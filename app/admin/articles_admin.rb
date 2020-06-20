@@ -33,6 +33,7 @@ Trestle.resource(:articles) do
         col { text_field :title }
         col { datetime_field :published_at }
       end
+      text_field :preview
 
       editor :content
     end

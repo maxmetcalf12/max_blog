@@ -5,12 +5,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-gray-200 text-gray-800 font-mono">
+    <%= render partial: "layouts/navbar" %>
+    <div class="max-w-2xl mx-auto">
+      <%= yield %>
+    </div>
+    <%= render partial: "layouts/footer" %>
   </body>
 </html>
