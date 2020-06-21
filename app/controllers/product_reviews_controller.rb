@@ -6,12 +6,12 @@ class ProductReviewsController < ApplicationController
   end
 
   def show
-    set_article
+    set_product_review
   end
 
   private
 
-  def set_article
+  def set_product_review
     @product_review = ProductReview.find(params[:id])
   end
 end

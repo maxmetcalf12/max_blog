@@ -1,0 +1,20 @@
+<div class="flex flex-col w-full my-8">
+  <div class="text-5xl relative">
+    <span class="absolute -ml-16">🤖</span>
+    <h1>Code Tutorials</h1>
+  </div>
+  <p class="text-lg">
+    List of guides I have made on how to do different things in Rails.
+  </p>
+</div>
+<div class="flex flex-col w-full my-8">
+  <% @code_tutorials.each do |code_tutorial| %>
+    <%= link_to code_tutorial do %>
+      <div class="Card">
+        <h2 class="text-xl"><%= code_tutorial.name %></h2>
+        <p class="text-sm text-gray-500"><%= code_tutorial.published_at.strftime("%B %e, %Y") %></p>
+        <%= code_tutorial.preview %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
