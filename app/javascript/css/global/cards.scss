@@ -1,0 +1,7 @@
+.Card {
+  @apply bg-gray-100 p-4 w-full my-2 transition duration-300 ease-in-out transform;
+
+  &:hover {
+    @apply scale-105 shadow-lg;
+  }
+}

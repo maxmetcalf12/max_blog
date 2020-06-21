@@ -19,7 +19,7 @@
   </div>
   <% @articles.each do |article| %>
     <%= link_to article do %>
-      <div class="bg-gray-100 p-4 w-full my-2">
+      <div class="Card">
         <h2 class="text-xl"><%= article.title %></h2>
         <p class="text-sm text-gray-500"><%= article.published_at.strftime("%B %e, %Y") %></p>
         <%= article.preview %>
@@ -34,7 +34,7 @@
   </div>
   <% @product_reviews.each do |product_review| %>
     <%= link_to product_review do %>
-      <div class="bg-gray-100 p-4 w-full my-2">
+      <div class="Card">
         <h2 class="text-xl"><%= product_review.name %></h2>
         <p class="text-sm text-gray-500"><%= product_review.published_at.strftime("%B %e, %Y") %></p>
         <%= product_review.preview %>
