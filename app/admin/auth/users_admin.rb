@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 Trestle.resource(:users, model: User, scope: Auth) do
   menu do
     group :configuration, priority: :last do
-      item :users, icon: "fa fa-users"
+      item :users, icon: 'fa fa-users'
     end
   end
 
@@ -10,14 +12,20 @@ Trestle.resource(:users, model: User, scope: Auth) do
       avatar_for(administrator)
     end
     column :email, link: true
+    column :first_name
+    column :last_name
     actions do |a|
       a.delete unless a.instance == current_user
     end
   end
 
-  form do |administrator|
+  form do |_administrator|
     text_field :email
 
+    row do
+      col { text_field :first_name }
+      col { text_field :last_name }
+    end
     row do
       col(sm: 6) { password_field :password }
       col(sm: 6) { password_field :password_confirmation }
@@ -34,8 +42,6 @@ Trestle.resource(:users, model: User, scope: Auth) do
   end
 
   after_action on: :update do
-    if Devise.sign_in_after_reset_password && instance == current_user
-      login!(instance)
-    end
+    login!(instance) if Devise.sign_in_after_reset_password && instance == current_user
   end
 end
