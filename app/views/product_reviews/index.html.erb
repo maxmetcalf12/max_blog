@@ -1,14 +1,14 @@
-<div class="flex flex-col w-full my-8">
-  <div class="text-5xl relative">
-    <span class="absolute -ml-16">💾</span>
+<div class="flex flex-col w-full my-8 px-4 md:px-0">
+  <div class="text-3xl mb-2 md:text-5xl md:mb-0 relative flex">
+    <span class="md:absolute md:-ml-16 mr-4">💾</span>
     <h1>Product Reviews</h1>
   </div>
-  <p class="text-lg">
+  <p class="text-lg leading-tight md:leading-normal">
     I love software products and when I feel really passionately about a product,
     I write a review.
   </p>
 </div>
-<div class="flex flex-col w-full my-8">
+<div class="flex flex-col w-full my-8 px-4 md:px-0">
   <% @product_reviews.each do |product_review| %>
     <%= link_to product_review do %>
       <div class="Card">
