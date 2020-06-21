@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-Trestle.resource(:product_reviews) do
+Trestle.resource(:code_tutorials) do
   menu do
     group :blog_management, priority: :first do
-      item :product_reviews, icon: 'fa fa-plug'
+      item :code_tutorials, icon: 'fa fa-code'
     end
   end
 
@@ -16,8 +16,7 @@ Trestle.resource(:product_reviews) do
   table do
     column :id
     column :name
-    column :url
-    column :rating
+    column :path
     actions
   end
 
@@ -27,11 +26,9 @@ Trestle.resource(:product_reviews) do
     row do
       col { text_field :name }
       col { datetime_field :published_at }
-    end
-    row do
-      col { number_field :rating, in: 1.0..10.0, step: 0.1 }
       col { text_field :path }
     end
+
     text_field :preview
 
     editor :content
