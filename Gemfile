@@ -14,6 +14,7 @@ gem 'trestle-tinymce'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
 
+gem "aws-sdk-s3", require: false
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
