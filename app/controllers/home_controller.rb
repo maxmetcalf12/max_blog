@@ -4,5 +4,6 @@ class HomeController < ApplicationController
   def index
     @articles = Article.published.order(published_at: :desc)
     @product_reviews = ProductReview.published.order(published_at: :desc)
+    @code_tutorials = CodeTutorial.published.order(published_at: :desc)
   end
 end
