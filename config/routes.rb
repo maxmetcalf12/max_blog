@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users
   root 'home#index'
   resources :articles, only: %i[index show]
   resources :product_reviews, path: 'products', only: %i[index show]

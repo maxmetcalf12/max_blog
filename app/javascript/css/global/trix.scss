@@ -10,4 +10,8 @@
   ol {
     @apply list-decimal ml-4;
   }
+
+  pre {
+    @apply bg-gray-300;
+  }
 }
